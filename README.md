@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+## High level objective:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Design and implement a component for visualizing events on a timeline.
 
-## Available Scripts
+# Demo
 
-In the project directory, you can run:
+<img src="docs/1.png"  />
 
-### `npm start`
+## Details:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Your timeline layout should arrange events in a compact space-efficient way: generally speaking, if event A ends before event B starts, the bars for those events can share the same horizontal lane, instead of existing on separate lanes. You may want to slightly relax this constraint to fit in the name of the event (for example, if the event's bar is too short, or the event's name is too long).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The input to the component should be an array of events, where each event has a name, start date, and end date.
 
-### `npm test`
+The start and end dates will be formatted as YYYY-MM-DD date strings, for example: "2021-12-23”. You don't need to worry about hours, minutes, seconds, or time zones.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You can assume every event's end date is the same or later than its start date.
 
-### `npm run build`
+Avoid using libraries that solve too much of the problem. General purpose libraries like React are definitely okay, but a library that calculates the layout for a timeline is not, for example. This also applies to the CSS Grid `grid-auto-flow` property (but you may use CSS Grid for positioning).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+After you have a basic read-only timeline showing up, here are some potential improvements to attempt:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Allow zooming in and out of the timeline.
+- Allow dragging and dropping to change the start date and/or end date for an event.
+- Allow editing the name of events inline.
+- Any other polish or useful enhancements you can think of.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Include a README that covers:
 
-### `npm run eject`
+- How long you spent on the assignment.
+- What you like about your implementation.
+- What you would change if you were going to do it again.
+- How you made your design decisions. For example, if you looked at other timelines for inspiration, please note that.
+- How you would test this if you had more time.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+If you did not use the starter code, please also include instructions on how to build and run your project so we can see and interact with the timeline component you built. It should render the sample data included in "src/timelineItems.js"
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+What we're looking for:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Clean, readable, maintainable code.
+- A sensible user experience and design for the final product.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Starter code:
 
-## Learn More
+To use the starter code: navigate to this project directory, run `npm install` to install dependencies (this takes a couple minutes), and then run `npm start` to initialize and connect to a node server with your default browser. Please feel free to use as much or as little of the starter code as you'd like.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Sample data:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The "src/timelineItems.js" file has some sample data you can use to get started.
 
-### Code Splitting
+## Time
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+start: 4:24pm Tuesday
 
-### Analyzing the Bundle Size
+end: 6:17pm Tuesday
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Questions
 
-### Making a Progressive Web App
+- How long you spent on the assignment.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Less than 2 hours
 
-### Advanced Configuration
+- What you like about your implementation.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+It's
 
-### Deployment
+- What you would change if you were going to do it again.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Nothing
 
-### `npm run build` fails to minify
+- How you made your design decisions. For example, if you looked at other timelines for inspiration, please note that.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+No, I just figured it out on my own. I started with the colors.
+
+- How you would test this if you had more time.
+
+With jest
